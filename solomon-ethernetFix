@@ -1,0 +1,10 @@
+#!/usr/bin/zsh
+
+# Ethernet interface name found with command: ip link show
+$ethernetInterface = enp0s31f6
+
+# Set the interface up
+ip link set $ethernetInterface up
+
+# Resolve a dynmaic IP address for the interface with dhcpcd
+dhcpcd $ethernetInterface
